@@ -22,7 +22,7 @@ docker build -t loggy_flask .
 
 # Run the container
 # Replace 'your_datadog_api_key' with your actual Datadog API key if using Datadog
-docker run -d -p 8080:5000 -e DD_API_KEY=your_datadog_api_key -e DD_ENV=production loggy_flask
+docker run -d -p 8080:8000 -e DD_API_KEY=your_datadog_api_key -e DD_ENV=production loggy_flask
 
 # Test that the application is running
 curl 127.0.0.1:8080
