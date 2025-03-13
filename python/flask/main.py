@@ -53,15 +53,15 @@ def ping():
 def log_message_route(level, message, count=1):
     """
     Endpoint to emit logs via HTTP requests.
-    
+
     Parameters:
         level (str): The log level to use (debug, info, warning, error, critical)
         message (str): The message to log
         count (int, optional): Number of times to emit the log. Defaults to 1.
-        
+
     Returns:
         tuple: A response message and HTTP status code
-        
+
     Example:
         GET /info/system-startup/ - Logs "system-startup" at INFO level once
         GET /error/database-connection-failed/5 - Logs error message 5 times
@@ -79,17 +79,17 @@ def log_message_route(level, message, count=1):
 def crash_route(handle=""):
     """
     Debug endpoint that triggers a division by zero error.
-    
+
     Used for testing error handling and logging in production/staging environments.
-    
+
     Parameters:
         handle (str, optional): If set to 'false', 'f', 'no', 'n', or 'fail', 
                                the exception will be propagated instead of caught.
                                Default is to catch the exception.
-    
+
     Returns:
         tuple: A response message and HTTP status code
-        
+
     Raises:
         ZeroDivisionError: When handle parameter indicates the error should not be caught
     """
@@ -107,9 +107,9 @@ def crash_route(handle=""):
 def default_route():
     """
     Default route that serves as the application's homepage.
-    
+
     Returns information about the available endpoints and their usage.
-    
+
     Returns:
         str: HTML content describing the API endpoints
     """
