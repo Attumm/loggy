@@ -40,4 +40,4 @@ ENV GUNICORN_TIMEOUT=120
 ENV GUNICORN_KEEP_ALIVE=5
 
 
-CMD ["ddtrace-run", "gunicorn", "--bind=0.0.0.0:5000", "--workers=3", "main:app"]
+CMD ["ddtrace-run", "gunicorn", "--bind=0.0.0.0:8000", "--workers=3", "main:app"]

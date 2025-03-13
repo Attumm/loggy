@@ -37,7 +37,7 @@ If you prefer to run the application locally without Docker:
 pip install -r requirements.txt
 
 # Run the application
-python python/flask/main.py
+python main.py
 ```
 
 ## Usage
@@ -64,6 +64,7 @@ curl http://127.0.0.1:8080/warning/disk-space-low/3
 curl http://127.0.0.1:8080/critical/database-failure/
 ```
 
+
 ### Using Postman
 
 1. Create a new GET request
@@ -79,6 +80,9 @@ curl http://127.0.0.1:8080/critical/database-failure/
 - `/crash/` - Trigger a controlled crash (caught exception)
 - `/crash/fail` - Trigger an uncaught exception (for testing error handling)
 - `/` - Application homepage with usage instructions
+
+- `/health` - health check endpoint
+- `ping` - returns pong, alternative healthcheck
 
 ### Log Levels
 
