@@ -22,7 +22,7 @@ docker build -t loggy_flask .
 
 # Run the container
 # Replace 'your_datadog_api_key' with your actual Datadog API key if using Datadog
-docker run -d -p 8080:5000 -e DD_API_KEY=your_datadog_api_key -e DD_ENV=production loggy_flask
+docker run -d -p 8080:8000 -e DD_API_KEY=your_datadog_api_key -e DD_ENV=production loggy_flask
 
 # Test that the application is running
 curl 127.0.0.1:8080
@@ -37,7 +37,7 @@ If you prefer to run the application locally without Docker:
 pip install -r requirements.txt
 
 # Run the application
-python python/flask/main.py
+python main.py
 ```
 
 ## Usage
@@ -64,6 +64,7 @@ curl http://127.0.0.1:8080/warning/disk-space-low/3
 curl http://127.0.0.1:8080/critical/database-failure/
 ```
 
+
 ### Using Postman
 
 1. Create a new GET request
@@ -79,6 +80,9 @@ curl http://127.0.0.1:8080/critical/database-failure/
 - `/crash/` - Trigger a controlled crash (caught exception)
 - `/crash/fail` - Trigger an uncaught exception (for testing error handling)
 - `/` - Application homepage with usage instructions
+
+- `/health` - health check endpoint
+- `ping` - returns pong, alternative healthcheck
 
 ### Log Levels
 
